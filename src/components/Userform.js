@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react"
 
 export default function Userform(){
-    const [userform, setUserform] = useState({firstname: "Ram",age:0})
+    const [userform, setUserform] = useState({firstname: "Ram",age:0,joiningDate:""})
     const handleEvent = function(event){
         console.log(event);
         setUserform({...userform,[event.target.name]:event.target.value})
@@ -21,6 +21,8 @@ export default function Userform(){
             <h3>Create User</h3>
             <input name="firstname" value={userform.firstname} onChange={handleEvent}></input>
             <input name="age" value={userform.age} onChange={handleEvent}></input>
+            <br/>Joining date: 
+            <input name='joiningDate' type="date" value={userform.joiningDate}  onChange={handleEvent}></input>
             <button onClick={save}>Save</button>
         </div>
     )
