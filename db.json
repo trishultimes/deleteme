@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "name": "trishul",
+      "lccation": "hyderabad",
+      "id": 1
+    },
+    {
+      "name": "trishul",
+      "lccation": "hyderabad",
+      "id": 2
+    },
+    {
+      "firstname": "Ram",
+      "age": 0,
+      "id": 3
+    },
+    {
+      "firstname": "Ram",
+      "age": 0,
+      "id": 4
+    },
+    {
+      "firstname": "Ramsdfa",
+      "age": "23424",
+      "id": 5
+    },
+    {
+      "firstname": "Ramsdfa",
+      "age": "23424",
+      "id": 6
+    },
+    {
+      "firstname": "Ramrwewr",
+      "age": "04534",
+      "id": 7
+    },
+    {
+      "firstname": "Ramrwewr",
+      "age": "04534",
+      "id": 8
+    }
+  ]
+}
