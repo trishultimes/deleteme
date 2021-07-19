@@ -1,0 +1,49 @@
+http methods'
+back end api
+restful api
+
+load balancer also called as proxy
+servers
+
+request header are from bowser to server
+response header are sent from the server to browser
+
+
+React
+Maintence was the problem earlier just using html, css and js
+
+some tools
+jquery -> extjs -> angular -> react
+
+why react? facebook created their own library to support millions of users
+
+UI development challenges?
+1. plan
+2. design thinking need not have any technical knowledge
+
+react
+-> components
+. git-bash: npm i -g create-react-app
+. git-bash: create-react-app user-app ; creates a hello world program with name user-app
+. git-bash: npm start -> will run our application
+
+react applications are single page applications
+it has a single div as default
+
+data component management in react is called state. 
+
+using "one way data binding"
+one way data we cannot change the data
+
+we need 2 way data binding to also read, editable
+In react state is immutable, but are replacable?
+
+
+. git-bash: npm i -g json-server
+. git-bash: json-server db.json --port=4200
+. git-bash: npm i axios
+
+
+
+git (?)
+. main, master
