@@ -4,19 +4,12 @@ import { useEffect, useState } from "react";
 
 export default function Userlist(){
     const [users, setUsers]= useState([]);
-    useEffect(function(){
-        if(users.length!=0){
-            return;
-        }
-        console.log('called........')
-        const promise = axios.get("http://localhost:4200/users")
-        promise.then(function(response){
-            setUsers(response.data);
-            console.log(response.data);
-        })
-    })
+    useEffect(()=>{return (users.length!=0)});
+    console.log('called........');
+    const promise = axios.get("http://localhost:4200/users");
+    promise.then((response)=>{setUsers(response.data)});
     return (
-        <div>
+        <div >
         <table className="table table-bordered table-hover table-responsive">
             <thead>
                 <tr>
