@@ -16,10 +16,10 @@ export default function Userlist(){
         <div >
         <table className="table table-bordered table-hover table-responsive">
             <thead>
-                <tr>
-                    <td> FirstName</td>
-                    <td>Age</td>
-                </tr>
+                <th>FirstName</th>
+                <th>Age</th>
+                <th>Joining Date</th>
+                
             </thead>
         <tbody>
         {users.map(function (user, index) {
@@ -30,6 +30,9 @@ export default function Userlist(){
                                 </td>
                                 <td>
                                     {user.age}
+                                </td>
+                                <td>
+                                    {user.joiningDate}
                                 </td>
                             </tr>
                         )
