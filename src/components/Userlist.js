@@ -16,9 +16,12 @@ export default function Userlist(){
         <div >
         <table className="table table-bordered table-hover table-responsive">
             <thead>
+                <tr>
                 <th>FirstName</th>
                 <th>Age</th>
                 <th>Joining Date</th>
+                </tr>
+                
                 
             </thead>
         <tbody>
