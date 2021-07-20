@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function Userlist(){
     const [users, setUsers]= useState([]);
     useEffect(function(){
-        if(users.length!=0){
+        if(users.length!==0){
             return;
         }
         console.log('called........');
@@ -14,12 +14,17 @@ export default function Userlist(){
     })
     return (
         <div >
+            <br/>
+            <br/>
+
+            <h3>LIST INFORMATION</h3>
         <table className="table table-bordered table-hover table-responsive">
-            <thead>
+            <thead className="tableheader">
                 <tr>
-                <th>FirstName</th>
+                <th >FirstName</th>
                 <th>Age</th>
                 <th>Joining Date</th>
+                <th>Skill</th>
                 </tr>
                 
                 
@@ -27,7 +32,7 @@ export default function Userlist(){
         <tbody>
         {users.map(function (user, index) {
                         return (
-                            <tr>
+                            <tr key={user.id}>
                                 <td>
                                     {user.firstname}
                                 </td>
@@ -36,6 +41,9 @@ export default function Userlist(){
                                 </td>
                                 <td>
                                     {user.joiningDate}
+                                </td>
+                                <td>
+                                    {user.skill}
                                 </td>
                             </tr>
                         )

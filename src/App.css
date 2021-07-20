@@ -1,7 +1,9 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
-
+.tableheader{
+  background-color:cyan;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,5 +1,6 @@
 export default function Header(){
     return (
-        <div>User form</div>
+        <center><h1>Create User Form</h1></center>
+        
     )
 }

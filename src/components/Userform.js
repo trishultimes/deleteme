@@ -1,29 +1,65 @@
-import axios from "axios";
-import { useState } from "react"
+ import { useState } from 'react'
+import axios from "axios"
+import {Dropdown} from "react-bootstrap"
+export default function UserForm() {
 
-export default function Userform(){
-    const [userform, setUserform] = useState({firstname: "Ram",age:0,joiningDate:""})
-    const handleEvent = function(event){
-        console.log(event);
-        setUserform({...userform,[event.target.name]:event.target.value})
+    const [userForm, setUserform] = useState({
+        firstname: "",
+        age: "",
+        joiningDate: "",
+        skill: "",
+    }) //hook function
+
+    const handleEvent = function (event) {
+        setUserform({ ...userForm, [event.target.name]: event.target.value });
     }
-
-    const save= function(event){
-        console.log("Username: " + userform.firstname);
-        console.log("Age: " + userform.age);
-        const promise = axios.post("http://localhost:4200/users",userform);
-        promise.then(function(response){
+    const handledropdown = function (e){
+        setUserform({...userForm,skill:e})
+    } 
+    
+    const save = function (event) {
+        console.log("User first name: " + userForm.firstname);
+        console.log("User age: " + userForm.age);
+        const promise = axios.post("http://localhost:4200/users", userForm);
+        promise.then(function (response) {
             console.log(response);
         })
+
     }
-    return(
+    return (
         <div>
-            <h3>Create User</h3>
-            <input placeholder="Name" name="firstname"  onChange={handleEvent}></input>
-            <input placeholder='Age' type="number" name="age"  onChange={handleEvent}></input>
-             Joining date: 
-            <input name='joiningDate' type="date" value={userform.joiningDate}  onChange={handleEvent}></input>
-            <button onClick={save}>Save</button>
+            <label><strong>Details: </strong> </label>
+            <div className='form-group'>
+                <input placeholder='First Name' name='firstname' className='form-control' value={userForm.firstname} onChange={handleEvent}>
+                </input>
+            </div>
+            <br/>
+            <input placeholder='Age' type='number' name='age' value={userForm.age} className='form-control' onChange={handleEvent}></input>
+            <br/>
+            <label htmlFor='joiningDate'><strong>Joining date:</strong></label>
+            
+            <div className='form-group'>
+                <input name='joiningDate' type="date" value={userForm.joiningDate} className='form-control' onChange={handleEvent}></input>
+            </div>
+            <br/>
+            <Dropdown className="form-group" onSelect={handledropdown}>
+                <Dropdown.Toggle variant="success" id="dropdown-basic" className="form-control" >
+                    SKILLS
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="form-group form-control" >
+                    <Dropdown.Item eventKey="html">HTML</Dropdown.Item>
+                    <Dropdown.Item eventKey="css">CSS</Dropdown.Item>
+                    <Dropdown.Item eventKey="javascript">JAVASCRIPT</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+
+            <br/>
+            
+            <div className='form-group'>
+                <button onClick={save} className='form-control btn-primary'>Save</button>
+            </div>
+
         </div>
-    )
+    );
 }
