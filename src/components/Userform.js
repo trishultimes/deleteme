@@ -19,8 +19,8 @@ export default function Userform(){
     return(
         <div>
             <h3>Create User</h3>
-            <input name="firstname" value={userform.firstname} onChange={handleEvent}></input>
-            <input name="age" value={userform.age} onChange={handleEvent}></input>
+            <input placeholder="Name" name="firstname"  onChange={handleEvent}></input>
+            <input placeholder='Age' type="number" name="age"  onChange={handleEvent}></input>
             <br/>Joining date: 
             <input name='joiningDate' type="date" value={userform.joiningDate}  onChange={handleEvent}></input>
             <button onClick={save}>Save</button>
