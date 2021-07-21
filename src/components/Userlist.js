@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 export default function Userlist(){
     const [users, setUsers]= useState([]);
     useEffect(function(){
@@ -12,12 +11,15 @@ export default function Userlist(){
         const promise = axios.get("http://localhost:4200/users");
         promise.then((response)=>{setUsers(response.data)})
     })
+  
+    
     return (
         <div >
             <br/>
             <br/>
 
             <h3>LIST INFORMATION</h3>
+ 
         <table className="table table-bordered table-hover table-responsive">
             <thead className="tableheader">
                 <tr>
